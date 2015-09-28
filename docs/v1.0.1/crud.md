@@ -4,8 +4,8 @@ Inserts a single document into MongoDB.
 
 ### Params
 * docments `<Object>`
-* [options] `<Object>` same as mongodb-native
-* [callback] `<Function(err, result)>` samge as mongodb-native
+* [options] `<Object>` [same as mongodb-native](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#insertOne)
+* [callback] `<Function(err, result)>` [same as mongodb-native](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#insertOne)
 
 ### Example
 ```js
@@ -20,14 +20,14 @@ my_collection.insert_one({test:1}, function(err, result){
 Insert documents into MongoDB.
 
 ### Params
-* documents <Object>
-* [options] <Object> same as mongodb-native
-* [callback] <Function(err, result)> same as mongdb-native
+* documents `<Object>`
+* [options] `<Object>` [same as mongodb-native](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#insertMany)
+* [callback] `<Function(err, result)>` [same as mongdb-native](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#insertMany)
 
 ### Example
 ```js
 var assert = require('assert');
-my_collection.insert([{test:1}, {test:2}], {w:1}, function(err, result){
+my_collection.insert([{test:1}, {test:2}], {w:1}], function(err, result){
     assert.equal(null, err);
     assert.equal(2, result.insertedCount);
 });
@@ -37,9 +37,9 @@ my_collection.insert([{test:1}, {test:2}], {w:1}, function(err, result){
 Fetches the first document that matches the query.
 
 ### params
-* query <Object> [mongodb query object](http://docs.mongodb.org/v2.4/tutorial/query-documents/)
-* [options] <Object> same as mongodb-native
-* [callback] <Function(err, result)> same as mongodb-native
+* query `<Object>` [mongodb query object](http://docs.mongodb.org/v2.4/tutorial/query-documents/)
+* [options] `<Object>` [same as mongodb-native](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#findOne)
+* [callback] `<Function(err, result)>` [same as mongodb-native](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#findOne)
 
 ### Example
 ```js
@@ -57,8 +57,8 @@ my_collection.insert([{test:1},{test:2}], function(err){
 Creates a cursor for a query that can be used to iterate over results from MongoDB.
 
 ### params
-* query <Object> [mongodb query object](http://docs.mongodb.org/v2.4/tutorial/query-documents/)
-* [options] <Object> same as mongodb-native
+* query `<Object>` [mongodb query object](http://docs.mongodb.org/v2.4/tutorial/query-documents/)
+* [options] `<Object>` [same as mongodb-native](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#find) 
 
 ### return
 * <Object> a cursor that can iterate over results
