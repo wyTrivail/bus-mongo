@@ -21,4 +21,7 @@
     "url": "https://github.com/wyTrivail/bus-mongo/issues"
   },
   "homepage": "https://github.com/wyTrivail/bus-mongo#readme"
+  "dependencies": {
+    "mongodb": "^2.0.28"
+  }
 }
