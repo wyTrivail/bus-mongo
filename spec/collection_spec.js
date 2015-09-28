@@ -1,8 +1,9 @@
 describe('Collection', function(){
-    var db_url = "mongodb://localhost:27017/test";
+    var db_url = "mongodb://admin:123456@localhost:27017/admin";
     var bus_mongo = require('../index.js');
     bus_mongo.init(db_url);
-    var collection = bus_mongo.collection('test');
+    var db = bus_mongo.db('test');
+    var collection = db.collection('test');
 
     beforeEach(function(done){
         collection.insert([{test:1},{test:2},{test:1},{test:1},{test:2}], function(err){
@@ -27,6 +28,7 @@ describe('Collection', function(){
 
     it("should be able to find one document", function(done){
         collection.find_one({test:1}, function(err, result){
+            expect(err).toBe(null);
             expect(result.test).toBe(1);
             done();
         });
@@ -41,6 +43,7 @@ describe('Collection', function(){
 
     it("should be able to delete one document", function(done){
         collection.delete_one({test:2}, function(err, r){
+            expect(err).toBe(null);
             expect(r.result.n).toBe(1);
             done();
         });

@@ -29,17 +29,18 @@ bus_mongo.init('mongodb://username:password@master-server:port, mongodb://userna
 ```
 
 ### get db
-we can access the db object after init bus-mongo
+we can access the other db object after connect to the admin db of mongo
 
 ```js
 var my_db = bus_mongo.db('my-db-name');
 ```
 
 ### get collection
-we can access the collection of the db object
+we can access the collection of the db object or the bus_mongo object, it means the default db instance in db url
 
 ```js
 var my_collection = my_db.collection('collection-name');
+var my_collection_of_default_db = bus_mongo.collection('collection-name');
 ```
 
 ### crud
