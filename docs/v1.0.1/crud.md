@@ -3,9 +3,11 @@
 Inserts a single document into MongoDB.
 
 ### Params
-    * docments <Object>
-    * [options] <Object> same as mongodb-native
-    * [callback] <Function(err, result)> samge as mongodb-native
+* docments <Object>
+
+* [options] <Object> same as mongodb-native
+
+* [callback] <Function(err, result)> samge as mongodb-native
 
 ### Example
 ```js
