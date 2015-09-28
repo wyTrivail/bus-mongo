@@ -46,7 +46,7 @@ var my_collection = my_db.collection('collection-name');
 we can do all the crud operations of the collection, for example:
 
 ```js
-my_collection.insert_one({test:1}, function(err){
+my_collection.insert({test:1}, function(err){
     if(err) console.log(err);
     else console.log('success insert!');
 });
