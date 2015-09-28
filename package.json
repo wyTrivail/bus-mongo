@@ -1,0 +1,24 @@
+{
+  "name": "bus-mongo",
+  "version": "1.0.1",
+  "description": "mongo client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/wyTrivail/bus-mongo.git"
+  },
+  "keywords": [
+    "mongodb",
+    "client",
+    "mongo"
+  ],
+  "author": "wytrivail",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wyTrivail/bus-mongo/issues"
+  },
+  "homepage": "https://github.com/wyTrivail/bus-mongo#readme"
+}
