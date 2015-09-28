@@ -76,4 +76,85 @@ my_collection.insert([{test:1}, {test:1, t:2}], function(err){
 ```
 
 ## update_one(query, payment, [options], [callback])
+Update a single document on MongoDB.
+
+###Params
+* query `<Object>` [mongodb query object](http://docs.mongodb.org/v2.4/tutorial/query-documents/)
+* payment `<Object>` [mongodb update object](http://docs.mongodb.org/v2.4/reference/operator/update/)
+* [options] `<Object>` [same as mongodb-native](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#updateOne)
+* [callback] `<Function(err, result)>` [same as mongodb-native](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#updateOne)
+
+### Example
+```js
+var assert = require('assert');
+my_collection.insert([{test:1}, {test:2}], function(err){
+    assert.equal(null, err);
+    my_collection.update_one({test:1}, {$set:{test:3}}, function(err, r){
+        assert(0, err);
+        assert(1, r.result.n);
+    });
+});
+```
+
+## update(query, payment, [options], [callback])
+Update multiple documents on MongoDB
+
+### Params
+* query `<Object>` [mongodb query object](http://docs.mongodb.org/v2.4/tutorial/query-documents/)
+* payment `<Object>` [mongodb update object](http://docs.mongodb.org/v2.4/reference/operator/update/)
+* [options] `<Object>` [same as mongodb-native](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#updateMany)
+* [callback] `<Function(err, result)>` [same as mongodb-native](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#updateMany)
+
+### Example
+```js
+var assert = require('assert');
+my_collection.insert([{test:1}, {test:2}, {test:1, ok:2}], function(err){
+    assert.equal(null, err);
+    my_collection.update({test:1}, {$set:{test:3}}, function(err, r){
+        assert(0, err);
+        assert(2, r.result.n);
+    });
+});
+```
+
+## delete_one(query, [options], [callback])
+Delete a document on MongoDB.
+
+### Params
+* query `<Object>` [mongodb query object](http://docs.mongodb.org/v2.4/tutorial/query-documents/)
+* [options] `<Object>` [same as mongodb-native](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#deleteOne)
+* [callback] `<Function(err, result)>` [same as mongodb-native](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#deleteOne)
+
+### Example
+```js
+var assert = require('assert');
+my_collection.insert([{test:1}, {test:2},{test:1,ok:2}], function(err){
+    assert.equal(null, err);
+    my_collection.delete_one({test:1}, function(err, r){
+        assert(null, err);
+        assert(1, r.result.n);
+    });
+});
+```
+
+## delete(query, [options], [callback])
+Delete multiple documents on MongoDB
+
+### Params
+* query `<Object>` [mongodb query object](http://docs.mongodb.org/v2.4/tutorial/query-documents/)
+* [options] `<Object>` [same as mongodb-native](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#deleteMany)
+* [callback] `<Function(err, result)>` [same as mongodb-native](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#deleteMany)
+
+### Example
+```js
+var assert = require('assert');
+my_collection.insert([{test:1}, {test:2},{test:1,ok:2}], function(err){
+    assert.equal(null, err);
+    my_collection.delete({test:1}, function(err, r){
+        assert(null, err);
+        assert(2, r.result.n);
+    });
+});
+```
+
 
