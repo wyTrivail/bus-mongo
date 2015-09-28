@@ -7,6 +7,7 @@ Inserts a single document into MongoDB.
 * [options] <Object> same as mongodb-native
 * [callback] <Function(err, result)> samge as mongodb-native
 
+
 ### Example
 ```js
 var assert = require('assert');
