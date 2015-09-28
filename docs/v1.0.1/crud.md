@@ -9,6 +9,9 @@ Inserts a single document into MongoDB.
 
 * [callback] <Function(err, result)> samge as mongodb-native
 
+
+
+
 ### Example
 ```js
 var assert = require('assert');
