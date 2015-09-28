@@ -61,7 +61,7 @@ Creates a cursor for a query that can be used to iterate over results from Mongo
 * [options] `<Object>` [same as mongodb-native](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#find) 
 
 ### return
-* <Object> a cursor that can iterate over results
+* `<Object>` a cursor that can iterate over results
 
 ### Example
 ```js
