@@ -77,5 +77,11 @@ describe('Collection', function(){
             done();
         });
     });
-
+    
+    it("should be able to count docs", function(done){
+        collection.count({test:1}, function(err, count){
+            expect(count).toBe(3);
+            done();
+        });
+    });
 });
