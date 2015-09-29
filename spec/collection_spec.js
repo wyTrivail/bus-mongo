@@ -37,6 +37,7 @@ describe('Collection', function(){
     it("should be able to update one document", function(done){
         collection.update_one({test:1},{$set:{test:2}},function(err, r){
             expect(err).toBe(null);
+            expect(r.result.n).toBe(1);
             done();
         });
     });
