@@ -16,7 +16,7 @@
     "mongo"
   ],
   "author": "wytrivail",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/wyTrivail/bus-mongo/issues"
   },
