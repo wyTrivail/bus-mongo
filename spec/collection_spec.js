@@ -84,4 +84,15 @@ describe('Collection', function(){
             done();
         });
     });
+
+    it("should be able to create index", function(done){
+        collection.create_index({test:1}, function(err, index_name){
+            expect(err).toBe(null);
+            collection.drop_index(index_name, function(err){
+                expect(err).toBe(null);
+                done();
+            });
+        });
+    });
+
 });
