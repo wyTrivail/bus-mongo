@@ -18,14 +18,14 @@ firstly ,we need to connect mongodb with the url.
 
 ```js
 var bus_mongo = require('bus-mongo');
-bus_mongo.init('mongodb://username:password@localhost:port/my_db');
+var my_db = bus_mongo.init('mongodb://username:password@localhost:port/my_db');
 ```
 
 if you have replicated sets, just add in url
 
 ```js
 var bus_mongo = require('bus-mongo');
-bus_mongo.init('mongodb://username:password@master-server:port, mongodb://username:password@slave-server:port/my-db-name');
+var my_db = bus_mongo.init('mongodb://username:password@master-server:port, mongodb://username:password@slave-server:port/my-db-name');
 ```
 
 ### get db
@@ -36,11 +36,10 @@ var my_db = bus_mongo.db('my-db-name');
 ```
 
 ### get collection
-we can access the collection of the db object or the bus_mongo object, it means the default db instance in db url
+we can access the collection of the db object.
 
 ```js
 var my_collection = my_db.collection('collection-name');
-var my_collection_of_default_db = bus_mongo.collection('collection-name');
 ```
 
 ### crud
