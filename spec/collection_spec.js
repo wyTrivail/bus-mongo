@@ -23,6 +23,7 @@ describe('Collection', function(){
         collection.insert({test:1}, function(err, result){
             expect(err).toBe(null);
             expect(result[0].test).toBe(1);
+            console.log(result);
             done();
         });
     });
