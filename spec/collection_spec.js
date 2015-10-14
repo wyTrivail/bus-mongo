@@ -40,6 +40,7 @@ describe('Collection', function(){
         collection.update_one({test:1},{$set:{test:2}}, {returnOriginal: false}, function(err, r){
             expect(err).toBe(null);
             expect(r.test).toBe(2);
+            console.log(r);
             done();
         });
     });
