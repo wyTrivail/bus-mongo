@@ -2,9 +2,19 @@ var mongo = require('./lib/mongo');
 var Collection = require('./lib/collection');
 
 
-module.exports.init = function(db_url, opt){
-    mongo.init(db_url, opt);
-    return module.exports.db(null);
+module.exports.init = function(){
+    if(arguments.length === 2){
+        var db_url = arguments[0];
+        var callback = arguments[1];
+    }else{
+        var db_url = arguments[0];
+        var opt = arguments[1];
+        var callback = arguments[2];
+    }
+    mongo.init(db_url, opt, (err) => {
+        if(err) callback(err);
+        else callback(null, module.exports.db(null));
+    });
 };
 
 module.exports.db = function(db_name){

@@ -1,14 +1,17 @@
 describe('Collection', function(){
     var db_url = "mongodb://admin:123456@localhost:27017/admin";
     var bus_mongo = require('../index.js');
-    var db = bus_mongo.init(db_url);
-    //var db = bus_mongo.db('test');
-    var collection = db.collection('test');
-
+    var collection;
+    var db;
     beforeEach(function(done){
-        collection.insert([{test:1},{test:2},{test:1},{test:1},{test:2}], function(err){
+        bus_mongo.init(db_url, (err, new_db) => {
             expect(err).toBe(null);
-            done();
+            db = new_db;
+            collection = db.collection('test');
+            collection.insert([{test:1},{test:2},{test:1},{test:1},{test:2}], function(err){
+                expect(err).toBe(null);
+                done();
+            });
         });
     });
 
