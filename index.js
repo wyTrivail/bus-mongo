@@ -20,7 +20,7 @@ module.exports.init = function(){
 module.exports.db = function(db_name){
     return {
         collection: (collection_name, options) => new Collection(db_name, collection_name, options),
-        list_collections: () => {
+        list_collections: function(){
             if(arguments.length === 1){
                 var callback = arguments[0];
                 var filter = {};
