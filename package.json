@@ -1,6 +1,6 @@
 {
   "name": "bus-mongo",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "a flexible mongodb client",
   "main": "index.js",
   "scripts": {
