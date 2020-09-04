@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/wyTrivail/bus-mongo#readme",
   "dependencies": {
-    "mongodb": "^2.0.28"
+    "mongodb": "^3.6.1"
   }
 }
